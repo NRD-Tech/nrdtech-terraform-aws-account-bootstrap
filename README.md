@@ -22,6 +22,25 @@ rm -fR .git
 * If using GitHub
     * Edit oidc.tf and un-comment the extra condition in the aws_iam_policy_document.oidc data
 
+## SSO
+* If your account is using the SSO system you will need to do the following
+1. Add access and secret credentials to ~/.aws/credentials
+2. Add config to ~/.aws/config
+```
+[profile mycompanyname]
+sso_session = mycompanyname
+sso_account_id = 1234567890 # account id
+sso_role_name = AdministratorAccess
+region = us-east-1
+output = json
+
+[sso-session mycompanyname]
+sso_start_url = https://d-123456.awsapps.com/start/#
+sso_region = us-east-1
+sso_registration_scopes = sso:account:access
+```
+3. `aws sso login --profile adhawk`
+
 ## Applying
 
 * Use a bootstrap AWS IAM User or your AWS IAM Identity Center SSO credentials to initially apply this repo.  
