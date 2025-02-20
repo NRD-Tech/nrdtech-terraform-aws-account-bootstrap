@@ -24,7 +24,8 @@ rm -fR .git
 
 ## SSO
 * If your account is using the SSO system you will need to do the following
-1. Add access and secret credentials to ~/.aws/credentials
+1. Make sure you do NOT have the access and secret credentials in ~/.aws/credentials
+    * otherwise commands will attempt to use them even if you are logged in with SSO
 2. Add config to ~/.aws/config
 ```
 [profile mycompanyname]
@@ -39,7 +40,7 @@ sso_start_url = https://d-123456.awsapps.com/start/#
 sso_region = us-east-1
 sso_registration_scopes = sso:account:access
 ```
-3. `aws sso login --profile mycompanyname`
+3. `aws sso login --profile adhawk`
 
 ## Applying
 
