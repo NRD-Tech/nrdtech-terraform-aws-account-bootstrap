@@ -40,7 +40,7 @@ sso_start_url = https://d-123456.awsapps.com/start/#
 sso_region = us-east-1
 sso_registration_scopes = sso:account:access
 ```
-3. `aws sso login --profile adhawk`
+3. `aws sso login --profile myprofile`
 
 ## Applying
 
