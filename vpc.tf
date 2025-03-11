@@ -1,10 +1,14 @@
+# locals {
+#     name = "mycompany-standard"
+# }
+
 # resource "aws_vpc" "standard_vpc" {
 #   cidr_block       = "10.10.0.0/16"
 #   enable_dns_support   = true
 #   enable_dns_hostnames = true
 
 #   tags = {
-#     Name = "mycompany-standard-vpc"
+#     Name = "${local.name}-vpc"
 #   }
 # }
 
@@ -15,7 +19,7 @@
 #   map_public_ip_on_launch = true
 
 #   tags = {
-#     Name = "mycompany-standard-subnet-public1-us-west-2a"
+#     Name = "${local.name}-subnet-public1-us-west-2a"
 #   }
 # }
 
@@ -26,7 +30,7 @@
 #   map_public_ip_on_launch = true
 
 #   tags = {
-#     Name = "mycompany-standard-subnet-public2-us-west-2b"
+#     Name = "${local.name}-subnet-public2-us-west-2b"
 #   }
 # }
 
@@ -37,7 +41,7 @@
 #   map_public_ip_on_launch = true
 
 #   tags = {
-#     Name = "mycompany-standard-subnet-public3-us-west-2c"
+#     Name = "${local.name}-subnet-public3-us-west-2c"
 #   }
 # }
 
@@ -47,7 +51,7 @@
 #   availability_zone = "us-west-2a"
 
 #   tags = {
-#     Name = "mycompany-standard-subnet-private1-us-west-2a"
+#     Name = "${local.name}-subnet-private1-us-west-2a"
 #   }
 # }
 
@@ -57,7 +61,7 @@
 #   availability_zone = "us-west-2b"
 
 #   tags = {
-#     Name = "mycompany-standard-subnet-private2-us-west-2b"
+#     Name = "${local.name}-subnet-private2-us-west-2b"
 #   }
 # }
 
@@ -67,7 +71,7 @@
 #   availability_zone = "us-west-2c"
 
 #   tags = {
-#     Name = "mycompany-standard-subnet-private3-us-west-2c"
+#     Name = "${local.name}-subnet-private3-us-west-2c"
 #   }
 # }
 
@@ -75,7 +79,7 @@
 #   vpc_id = aws_vpc.standard_vpc.id
 
 #   tags = {
-#     Name = "mycompany-standard-igw"
+#     Name = "${local.name}-igw"
 #   }
 # }
 
@@ -88,7 +92,7 @@
 #   }
 
 #   tags = {
-#     Name = "mycompany-standard-rtb-public"
+#     Name = "${local.name}-rtb-public"
 #   }
 # }
 
@@ -111,7 +115,7 @@
 #   vpc_id = aws_vpc.standard_vpc.id
 
 #   tags = {
-#     Name = "mycompany-standard-rtb-private1-us-west-2a"
+#     Name = "${local.name}-rtb-private1-us-west-2a"
 #   }
 # }
 
@@ -119,7 +123,7 @@
 #   vpc_id = aws_vpc.standard_vpc.id
 
 #   tags = {
-#     Name = "mycompany-standard-rtb-private2-us-west-2b"
+#     Name = "${local.name}-rtb-private2-us-west-2b"
 #   }
 # }
 
@@ -127,7 +131,7 @@
 #   vpc_id = aws_vpc.standard_vpc.id
 
 #   tags = {
-#     Name = "mycompany-standard-rtb-private3-us-west-2c"
+#     Name = "${local.name}-rtb-private3-us-west-2c"
 #   }
 # }
 
@@ -136,7 +140,7 @@
 #   subnet_id     = aws_subnet.public_subnet_1a.id
 
 #   tags = {
-#     Name = "mycompany-standard-nat-public1-us-west-2a"
+#     Name = "${local.name}-nat-public1-us-west-2a"
 #   }
 # }
 
