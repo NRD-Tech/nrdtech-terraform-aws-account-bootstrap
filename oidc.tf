@@ -46,7 +46,10 @@ data "aws_iam_policy_document" "oidc" {
     # condition {
     #   test     = "StringLike"
     #   variable = "${local.oidc_provider_uri}:sub"
-    #   values   = ["repo:${local.github_org}/*:ref:refs/heads/*"]
+    #   values   = [
+    #     "repo:${local.github_org}/*:ref:refs/heads/*", 
+    #     "repo:${local.github_org}/*:ref:refs/tags/*"
+    #   ]
     # }
   }
 }
