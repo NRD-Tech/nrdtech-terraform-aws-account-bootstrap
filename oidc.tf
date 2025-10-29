@@ -48,7 +48,12 @@ data "aws_iam_policy_document" "oidc" {
     #   variable = "${local.oidc_provider_uri}:sub"
     #   values   = [
     #     "repo:${local.github_org}/*:ref:refs/heads/*", 
-    #     "repo:${local.github_org}/*:ref:refs/tags/*"
+    #     "repo:${local.github_org}/*:ref:refs/tags/*",
+    #     "repo:${local.github_org}/*:environment:dev",
+    #     "repo:${local.github_org}/*:environment:development",
+    #     "repo:${local.github_org}/*:environment:staging",
+    #     "repo:${local.github_org}/*:environment:prod",
+    #     "repo:${local.github_org}/*:environment:production"
     #   ]
     # }
   }
