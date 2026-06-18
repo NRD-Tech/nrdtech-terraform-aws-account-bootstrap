@@ -53,7 +53,8 @@ data "aws_iam_policy_document" "oidc" {
     #     "repo:${local.github_org}/*:environment:development",
     #     "repo:${local.github_org}/*:environment:staging",
     #     "repo:${local.github_org}/*:environment:prod",
-    #     "repo:${local.github_org}/*:environment:production"
+    #     "repo:${local.github_org}/*:environment:production",
+    #     "repo:${local.github_org}/*:environment:shared"
     #   ]
     # }
   }
